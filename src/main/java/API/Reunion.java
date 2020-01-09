@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -19,10 +20,19 @@ public class Reunion {
 	String intitule;
 	@Transient
 	String resume;
-	
-	Collection <Participants> participants;
+
+	@ManyToMany(mappedBy = "participants")
+	Collection<Participants> participants;
 
 	public Reunion() {
+	}
+
+	public Collection<Participants> getParticipants() {
+		return participants;
+	}
+
+	public void setParticipants(Collection<Participants> participants) {
+		this.participants = participants;
 	}
 
 	public String getIntitule() {

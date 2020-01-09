@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Sondage {
@@ -16,6 +17,8 @@ public class Sondage {
 	
 	@Column(name="resultat")
 	int resultat;
+	
+	@ManyToMany(mappedBy="Date")
 	Collection<Date> dates;
 	
 	public Sondage() {
