@@ -16,8 +16,8 @@ public class Participants extends Utilisateur {
 	@ManyToOne
 	Email email;
 
-	public Participants(long id, String nom, String prenom, String mail) {
-		super(id, nom, prenom, mail);
+	public Participants(String nom, String prenom, String mail) {
+		super(nom, prenom, mail);
 	}
 
 	public String getPreferenceAlimentaire() {

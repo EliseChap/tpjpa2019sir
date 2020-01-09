@@ -22,9 +22,8 @@ public class Utilisateur {
 	
 	Date date;
 
-	public Utilisateur(long id,String nom, String prenom, String mail) {
+	public Utilisateur(String nom, String prenom, String mail) {
 
-		this.id=id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.mail = mail;
