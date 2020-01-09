@@ -6,54 +6,38 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Participants {
+public class Participants extends Utilisateur {
 
-	@Id
-	@GeneratedValue
-	long id;
-	@Column(updatable = false, length = 20)
-	String nom;
-	@Column(updatable = false, length = 20)
-	String prenom;
-	@Column(name = "email")
-	String mail;
+	String preferenceAlimentaire;
+	String allergies;
+	Email email;
 
-	public Participants(String nom, String prenom, String mail) {
-
-		this.nom = nom;
-		this.prenom = prenom;
-		this.mail = mail;
+	public Participants(long id, String nom, String prenom, String mail) {
+		super(id, nom, prenom, mail);
 	}
 
-	public Participants() {
-
+	public String getPreferenceAlimentaire() {
+		return preferenceAlimentaire;
 	}
 
-	public String getNom() {
-		return nom;
+	public void setPreferenceAlimentaire(String preferenceAlimentaire) {
+		this.preferenceAlimentaire = preferenceAlimentaire;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public String getAllergies() {
+		return allergies;
 	}
 
-	public String getPrenom() {
-		return prenom;
+	public void setAllergies(String allergies) {
+		this.allergies = allergies;
 	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public Email getEmail() {
+		return email;
 	}
 
-	public String getMail() {
-		return mail;
+	public void setMail(Email email) {
+		this.email = email;
 	}
 
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public long getId() {
-		return id;
-	}
 }

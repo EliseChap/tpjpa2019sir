@@ -1,6 +1,7 @@
 package API;
 
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,32 +11,50 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Sondage {
-	
+
 	@Id
 	@GeneratedValue
 	long id;
-	
-	@Column(name="resultat")
-	int resultat;
-	
-	@ManyToMany(mappedBy="Date")
-	Collection<Date> dates;
-	
+
+	// @ManyToMany(mappedBy="Date")
+	Collection<Date> datesPossibles;
+	Collection<DateReponses> datesReponses;
+	Date dateValide;
+
 	public Sondage() {
-		
+
 	}
-	
-	public int getResultat() {
-		return resultat;
+
+	public long getId() {
+		return id;
 	}
-	public void setResultat(int resultat) {
-		this.resultat = resultat;
+
+	public void setId(long id) {
+		this.id = id;
 	}
-	public Collection<Date> getDates() {
-		return dates;
+
+	public Collection<Date> getDatesPossibles() {
+		return datesPossibles;
 	}
-	public void setDates(Collection<Date> dates) {
-		this.dates = dates;
+
+	public void setDatesPossibles(Collection<Date> datesPossibles) {
+		this.datesPossibles = datesPossibles;
+	}
+
+	public Collection<DateReponses> getDatesReponses() {
+		return datesReponses;
+	}
+
+	public void setDatesReponses(Collection<DateReponses> datesReponses) {
+		this.datesReponses = datesReponses;
+	}
+
+	public Date getDateValide() {
+		return dateValide;
+	}
+
+	public void setDateValide(Date dateValide) {
+		this.dateValide = dateValide;
 	}
 
 }

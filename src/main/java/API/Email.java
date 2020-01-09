@@ -1,5 +1,7 @@
 package API;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,11 +19,15 @@ public class Email {
 	@Transient
 	String contenu;
 
-	@ManyToOne
-	ClearCode clearCode;
-	
-	@OneToOne
-	LienPauseDejeuner lienUnique;
+	int clearCode; // code du batiment
+	String lienWeb;
+	String lienSondage;
+	String lienPad;
+
+	Administrateur administrateur;
+
+	Collection<Participants> participants;
+	Collection<Utilisateur> utilisateurs;
 
 	public Email() {
 	}
@@ -42,20 +48,52 @@ public class Email {
 		this.contenu = contenu;
 	}
 
-	public ClearCode getClearCode() {
+	public int getClearCode() {
 		return clearCode;
 	}
 
-	public void setClearCode(ClearCode clearCode) {
+	public void setClearCode(int clearCode) {
 		this.clearCode = clearCode;
 	}
 
-	public LienPauseDejeuner getLienUnique() {
-		return lienUnique;
+	public String getLienWeb() {
+		return lienWeb;
 	}
 
-	public void setLienUnique(LienPauseDejeuner lienUnique) {
-		this.lienUnique = lienUnique;
+	public void setLienWeb(String lienWeb) {
+		this.lienWeb = lienWeb;
+	}
+
+	public String getLienSondage() {
+		return lienSondage;
+	}
+
+	public void setLienSondage(String lienSondage) {
+		this.lienSondage = lienSondage;
+	}
+
+	public String getLienPad() {
+		return lienPad;
+	}
+
+	public void setLienPad(String lienPad) {
+		this.lienPad = lienPad;
+	}
+
+	public Collection<Participants> getParticipants() {
+		return participants;
+	}
+
+	public void setParticipants(Collection<Participants> participants) {
+		this.participants = participants;
+	}
+
+	public Collection<Utilisateur> getUtilisateur() {
+		return utilisateurs;
+	}
+
+	public void setUtilisateur(Collection<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
 	}
 
 }
