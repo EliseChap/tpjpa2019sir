@@ -4,12 +4,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Participants extends Utilisateur {
 
 	String preferenceAlimentaire;
 	String allergies;
+
+	@ManyToOne
 	Email email;
 
 	public Participants(long id, String nom, String prenom, String mail) {

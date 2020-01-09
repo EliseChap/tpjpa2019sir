@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
@@ -19,14 +20,18 @@ public class Email {
 	@Transient
 	String contenu;
 
-	int clearCode; // code du batiment
-	String lienWeb;
-	String lienSondage;
-	String lienPad;
-
+	int clearCode; 			// code du batiment
+	String lienWeb;			// lien unique pour que les participants donnent leurs allergies et pref alimentaire
+	String lienSondage;		// lien du sondage
+	String lienPad;			// lien du pad
+	
+	@ManyToOne
 	Administrateur administrateur;
-
+	
+	@OneToMany(mappedBy="email")
 	Collection<Participants> participants;
+	
+	@OneToMany(mappedBy="email")
 	Collection<Utilisateur> utilisateurs;
 
 	public Email() {

@@ -21,7 +21,7 @@ public class Reunion {
 	@Transient
 	String resume;
 
-	@ManyToMany(mappedBy = "participants")
+	@ManyToMany
 	Collection<Participants> participants;
 
 	public Reunion() {

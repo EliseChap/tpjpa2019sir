@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Sondage {
@@ -16,8 +18,9 @@ public class Sondage {
 	@GeneratedValue
 	long id;
 
-	// @ManyToMany(mappedBy="Date")
 	Collection<Date> datesPossibles;
+	
+	@OneToMany(mappedBy="sondage")
 	Collection<DateReponses> datesReponses;
 	Date dateValide;
 

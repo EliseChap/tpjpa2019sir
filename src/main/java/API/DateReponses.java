@@ -19,6 +19,8 @@ public class DateReponses {
 	long id = utilisateur.getId();
 
 	Collection<Date> ReponsesDate;
+	
+	Sondage sondage;
 
 	public DateReponses(long id) {
 		this.id = id;
