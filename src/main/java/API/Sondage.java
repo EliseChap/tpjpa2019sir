@@ -2,14 +2,12 @@ package API;
 
 import java.util.Collection;
 import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Sondage {
@@ -18,10 +16,13 @@ public class Sondage {
 	@GeneratedValue
 	long id;
 
-	Collection<Date> datesPossibles;
-	
-	@OneToMany(mappedBy="sondage")
+	@OneToMany(mappedBy = "sondage")
+	Collection<DatesPossibles> datesPossibles;
+
+	@OneToMany(mappedBy = "sondage")
 	Collection<DateReponses> datesReponses;
+
+	@Temporal(TemporalType.DATE)
 	Date dateValide;
 
 	public Sondage() {
@@ -36,11 +37,11 @@ public class Sondage {
 		this.id = id;
 	}
 
-	public Collection<Date> getDatesPossibles() {
+	public Collection<DatesPossibles> getDatesPossibles() {
 		return datesPossibles;
 	}
 
-	public void setDatesPossibles(Collection<Date> datesPossibles) {
+	public void setDatesPossibles(Collection<DatesPossibles> datesPossibles) {
 		this.datesPossibles = datesPossibles;
 	}
 

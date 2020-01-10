@@ -9,7 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class DateReponses {
+public class DatesPossibles {
 
 	@Id
 	@GeneratedValue
@@ -17,14 +17,12 @@ public class DateReponses {
 
 	@ManyToOne
 	Sondage sondage;
-	@ManyToOne
-	Utilisateur utilisateur;
-
+	
 	@Temporal(TemporalType.DATE)
-	Date dateReponse;
+	Date date;
 
-	public DateReponses() {
-
+	public DatesPossibles() {
+		super();
 	}
 
 	public long getId() {

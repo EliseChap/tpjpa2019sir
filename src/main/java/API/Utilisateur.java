@@ -1,11 +1,14 @@
 package API;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Utilisateur {
@@ -21,7 +24,13 @@ public class Utilisateur {
 	String mail;
 	
 	Date date;
-
+	
+	@ManyToOne
+	Email email;
+	
+	@OneToMany(mappedBy = "utilisateur")
+	Collection<DateReponses> datesReponses;
+	
 	public Utilisateur(String nom, String prenom, String mail) {
 
 		this.nom = nom;
