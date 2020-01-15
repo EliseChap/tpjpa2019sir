@@ -2,6 +2,7 @@ package API;
 
 import java.util.Collection;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -28,10 +29,11 @@ public class Email {
 	@ManyToOne
 	Administrateur administrateur;
 	
-	@OneToMany(mappedBy="email")
+	
+	@Transient@OneToMany(mappedBy="email")
 	Collection<Participants> participants;
 	
-	@OneToMany(mappedBy="email")
+	@Transient@OneToMany(mappedBy="email")
 	Collection<Utilisateur> utilisateurs;
 
 	public Email() {

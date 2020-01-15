@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity
 public class Utilisateur {
@@ -25,7 +26,7 @@ public class Utilisateur {
 	
 	Date date;
 	
-	@ManyToOne
+	@Transient@ManyToOne
 	Email email;
 	
 	@OneToMany(mappedBy = "utilisateur")

@@ -8,6 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
+import API.Administrateur;
+import API.Participants;
 import API.Utilisateur;
 
 public class JpaTest {
@@ -47,17 +49,21 @@ public class JpaTest {
 	private void createUtilisateur() {
 		int numOfUtilisateurs = manager.createQuery("Select a From Utilisateur a", Utilisateur.class).getResultList()
 				.size();
-		if (numOfUtilisateurs == 0) {
-
+		
 			manager.persist(new Utilisateur("Jakab", " Gipsz", "Jakab@mail.fr"));
 			manager.persist(new Utilisateur("Captain", "Nemo", "captainnemo@mail.fr"));
 			manager.persist(new Utilisateur("Jahoui", " Hajar", "hajar@mail.fr"));
 			manager.persist(new Utilisateur("Chapon", "Elise", "elise@mail.fr"));
-		}
+			manager.persist(new Participants("zertg", " Hajeerftgar", "hajartgr@mail.fr"));
+			manager.persist(new Administrateur("Chapserfdghon", "Eliretgse", "elisrete@mail.fr"));
+	
+		//int numOfUtilisateurs = manager.createQuery("Select a From Utilisateur a", Utilisateur.class).getResultList().size();
 	}
 
 	private void listUtilisateurs() {
 		List<Utilisateur> resultList = manager.createQuery("Select a From Utilisateur a", Utilisateur.class)
+				.getResultList();
+		List<Participants> resultListParticipants = manager.createQuery("Select a From Participants a", Participants.class)
 				.getResultList();
 		System.out.println("num of utilisateurs:" + resultList.size());
 		for (Utilisateur next : resultList) {

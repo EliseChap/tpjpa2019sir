@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 @Entity
 public class Participants extends Utilisateur {
@@ -13,7 +14,8 @@ public class Participants extends Utilisateur {
 	String preferenceAlimentaire;
 	String allergies;
 
-	@ManyToOne
+	
+	@Transient@ManyToOne
 	Email email;
 
 	public Participants(String nom, String prenom, String mail) {
