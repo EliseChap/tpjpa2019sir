@@ -33,3 +33,4 @@ INSERT INTO UTILISATEUR VALUES('Utilisateur',4,NULL,'elise@mail.fr','Chapon','El
 INSERT INTO UTILISATEUR VALUES('Participants',5,NULL,'hajartgr@mail.fr','zertg',' Hajeerftgar',NULL,NULL)
 INSERT INTO UTILISATEUR VALUES('Administrateur',6,NULL,'elisrete@mail.fr','Chapserfdghon','Eliretgse',NULL,NULL)
 COMMIT
+DISCONNECT
