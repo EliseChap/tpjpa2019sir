@@ -18,12 +18,15 @@ public class Participants extends Utilisateur {
 	String allergies;
 
 	
-	@Transient@ManyToOne
-	Email email;
+	@ManyToOne
+	Email emailparticipant;
 	
-	@ManyToMany(mappedBy="participants")
+	@ManyToOne
 	Reunion reunion;
 
+	public Participants() {
+	}
+	
 	public Participants(String nom, String prenom, String mail) {
 		super(nom, prenom, mail);
 	}

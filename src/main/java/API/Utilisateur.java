@@ -17,7 +17,7 @@ public class Utilisateur {
 	@Id
 	@GeneratedValue
 	long id;
-	@Column(updatable = false, length = 20)
+	@Column(updatable = false, length = 20) 
 	String nom;
 	@Column(updatable = false, length = 20)
 	String prenom;
@@ -26,7 +26,7 @@ public class Utilisateur {
 	
 	Date date;
 	
-	@Transient@ManyToOne
+	@ManyToOne
 	Email email;
 	
 	@OneToMany(mappedBy = "utilisateur")

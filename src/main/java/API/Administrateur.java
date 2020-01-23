@@ -15,6 +15,9 @@ public class Administrateur extends Utilisateur {
 	@OneToMany(mappedBy="administrateur")
 	Collection<Sondage> sondage;
 	
+	public Administrateur() {
+	}
+	
 	public Administrateur(String nom, String prenom, String mail) {
 		super(nom, prenom, mail);
 	}

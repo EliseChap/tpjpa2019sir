@@ -30,10 +30,10 @@ public class Email {
 	Administrateur administrateur;
 	
 	
-	@Transient@OneToMany(mappedBy="email")
+	@OneToMany(mappedBy="emailparticipant")
 	Collection<Participants> participants;
 	
-	@Transient@OneToMany(mappedBy="email")
+	@OneToMany(mappedBy="email")
 	Collection<Utilisateur> utilisateurs;
 
 	public Email() {

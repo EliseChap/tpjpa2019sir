@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -21,7 +22,7 @@ public class Reunion {
 	@Transient
 	String resume;
 
-	@ManyToMany
+	@OneToMany(mappedBy = "reunion")
 	Collection<Participants> participants;
 
 	public Reunion() {
