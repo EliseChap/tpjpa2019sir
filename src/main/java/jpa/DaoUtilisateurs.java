@@ -2,7 +2,8 @@ package jpa;
 
 import java.util.List;
 
-import API.Utilisateur;
+import dao.generic.EntityManagerHelper;
+import entites.Utilisateur;
 
 public class DaoUtilisateurs {
 	public Utilisateur findById(String id) {

@@ -1,4 +1,4 @@
-package API;
+package entites;
 
 import java.util.Collection;
 import java.util.Date;
@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
+
 public class Utilisateur {
 
 	@Id

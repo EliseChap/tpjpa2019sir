@@ -8,9 +8,9 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
-import API.Administrateur;
-import API.Participants;
-import API.Utilisateur;
+import entites.Administrateur;
+import entites.Participants;
+import entites.Utilisateur;
 
 public class JpaTest {
 

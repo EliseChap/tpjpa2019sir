@@ -1,7 +1,8 @@
 package service;
 
 import java.util.List;
-import API.Utilisateur;
+
+import entites.Utilisateur;
 
 
 

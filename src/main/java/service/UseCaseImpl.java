@@ -8,8 +8,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import API.Utilisateur;
-import jpa.EntityManagerHelper;
+import dao.generic.EntityManagerHelper;
+import entites.Utilisateur;
 
 @Path("api")
 public class UseCaseImpl implements UseCase {

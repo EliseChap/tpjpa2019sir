@@ -10,20 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import API.Utilisateur;
+import dao.UtilisateurDao;
+import entites.Utilisateur;
 import jpa.DaoUtilisateurs;
 
 @WebServlet(name = "UtilisateurInfo", urlPatterns = { "/UtilisateurInfo" })
 public class UtilisateurInfo extends HttpServlet {
 	
-	private DaoUtilisateurs dao;
+	private UtilisateurDao dao;
 
 
 	public UtilisateurInfo() {
-		dao = new DaoUtilisateurs();
-		
-		
-	
+		dao = new UtilisateurDao();
 	
 	}
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
