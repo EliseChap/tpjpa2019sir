@@ -10,6 +10,9 @@ Pour lancer la base de données, il vous faut ouvrir, dans l'ordre, les deux fic
   - run-hsqldb-server.bat
   - show-hsqldb.bat => Une fois le fichier lancé, vous devez changer l'URL par : jdbc:hsqldb:hsql://localhost/
   
+Dans un IDE, lancer JPAtest.java si vous souhaitez préremplir la base avec quelques informations.
+Pour finir, lancer le serveur Maven> Build...> mvn tomcat7:run
+  
 ### Sous Linux
 Pour lancer la base de données, il vous faut ouvrir, dans l'ordre, les deux fichiers suivants:
   - run-hsqldb-server.sh
